@@ -1,0 +1,27 @@
+class Node:                        #creating of a node 
+    def __init__(self , data):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+    
+    def printlist(self):           #printing the created linked list
+        curnode = self.head
+        while(curnode):
+            print(curnode.data)
+            curnode=curnode.next
+
+    def append(self,data):          #insertion at end
+        newnode = Node(data)
+
+        if self.head == None:
+            self.head = newnode
+            return 
+        
+        lastnode = self.head
+       
+        while(lastnode.next):
+            lastnode=lastnode.next
+        lastnode.next=newnode    
